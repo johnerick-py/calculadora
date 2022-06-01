@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 from operacoes import Calculator
 
 class Interface:
-    def view(self):
+    def view():
         # Layout
         sg.theme("DarkGrey3")
         layout = [
@@ -13,26 +13,4 @@ class Interface:
             [sg.Button("1",key="one", size=(3,2)), sg.Button("2",key="two", size=(3,2)), sg.Button("3",key="three", size=(3,2)), sg.Button("+",key="add", size=(3,2))],
             [sg.Button("0",key="zero", size=(3,2)), sg.Button(".",key="point", size=(3,2)), sg.Button("=",key="equal", size=(12,2))]
             ]
-        # Janela
-        window = sg.Window("Calculator", element_justification="c", resizable=True, margins=(0,0), layout=layout, return_keyboard_events=False)
-
-        # Lista painel
-        panel = window["panel"]
-        
-
-        # Events
-        while True:
-            event, values = window.read(timeout=1)    
-            if event == sg.WINDOW_CLOSED:
-                break
-            
-            elif event == "cancel":
-                window["panel"].update("")
-            
-            elif event == "seven":        
-                panel.update(panel.get() + "7")
-
-            elif event == "equal":
-                result = panel.get()
-                return result
-    
+        return layout

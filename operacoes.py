@@ -11,7 +11,8 @@ class Calculator:
                 while j <= 1:
                     try:
                         j+=1
-                        return print(eval(numero))
+                        resultado = eval(numero)
+                        return resultado
                     except:
                         print('Digite uma expressao valida.')
                         exit()
