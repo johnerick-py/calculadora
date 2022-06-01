@@ -3,23 +3,20 @@ import PySimpleGUI as sg
 from interface_poo import Interface
 from operacoes import Calculator
 
-class Application():
-    def actions():
-        # Importando o layout
-        # layout = Application.view(self)
-
-        layout = Interface.view()
-
-
-        
+class Application(Interface):
+    def actions(self):
+        # Importando o layout    
+        self.layout = Application.view()
 
         # Janela 
-        window = sg.Window("Calculator", element_justification="c", resizable=True, margins=(0,0), layout=layout, return_keyboard_events=False)
-        window = window
+        window = sg.Window("Calculator", element_justification="c", resizable=True, margins=(0,0), layout=self.layout, return_keyboard_events=False)
+        self.window = window
 
         # Lista painel
         panel = window["panel"]
-        panel = panel
+        self.panel = panel
+
+        
 
         # Events
         while True:
@@ -49,10 +46,9 @@ class Application():
     
 if __name__ == "__main__":
     x = 0
-    app = Application
-    app.actions()
-
+    app = Application()
     calculator = Calculator()
+
     while x <= 10:
         
         user_input = app.actions()   
