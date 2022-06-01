@@ -1,10 +1,8 @@
-from operacaoes import Calculator
+from operacoes import Calculator
+from interface_poo import Interface
 
 
 if __name__ == "__main__":
-    numero = input()
-    
-    objeto = Calculator()
-    objeto.calculate(numero)
-    
+    interface = Interface.teste()
+    user_input = interface.teste()
     
